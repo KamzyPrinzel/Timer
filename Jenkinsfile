@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'timer:1'
+        IMAGE_NAME = 'prinzkay/timer:1'
     }
 
     stages {
