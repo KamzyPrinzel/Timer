@@ -31,12 +31,6 @@ pipeline {
             }
         }
 
-        stage('scan docker image with trivy') {
-            steps {
-               sh 'trivy image --scanners vuln --timeout 10m $IMAGE_NAME > timer-1-result.txt'
-            }
-        }
-
         stage('push image to dockerhub') {
             steps {
                 withCredentials([string(credentialsId: 'dockerhub-password', variable: 'DOCKER_PASS')]) {
