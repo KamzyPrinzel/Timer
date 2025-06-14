@@ -11,12 +11,11 @@ pipeline{
             steps{
                 deleteDir()
             }
-            }
         }
 
         stage('check out from git repo') {
             steps{
-                branch: 'main', url: 'https://github.com/KamzyPrinzel/Timer.git'
+                git branch: 'main', url: 'https://github.com/KamzyPrinzel/Timer.git'
             }
         }
 
