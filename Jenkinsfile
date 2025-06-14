@@ -33,7 +33,7 @@ pipeline {
 
         stage('scan docker image with trivy') {
             steps {
-                sh 'trivy image $IMAGE_NAME > timer-1-result.txt'
+               sh 'trivy image --scanners vuln --timeout 10m $IMAGE_NAME > timer-1-result.txt'
             }
         }
 
