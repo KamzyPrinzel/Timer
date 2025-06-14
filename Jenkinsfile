@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'prinzkay/timer:1'
+        IMAGE_NAME = 'timer:1'
     }
 
     stages {
@@ -27,7 +27,7 @@ pipeline {
 
         stage('run container from image') {
             steps {
-                sh 'docker run -d -p 1234:8000 $IMAGE_NAME'
+                sh 'docker run -d -p 1234:80 $IMAGE_NAME'
             }
         }
 
